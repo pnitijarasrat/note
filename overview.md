@@ -10,7 +10,7 @@
 
 > ## Waiting
 
-- Operation Sheet Requirement ( Branch Manager, Area Manager, COO Sheet )
+- Operation Sheet Requirement ( Branch Manager, Area Manager, COO Sheet ) ( Only have branch operator for now )
 - Operation Dashboard Requirement
 - Evaluation Process
 - Evaluation Feature Requirement
@@ -42,7 +42,7 @@
 
 > ## Concern
 
-- Current Score
+- Current Score -- They say it will be 35 for all of Technology Project
 
 > ## Website
 
