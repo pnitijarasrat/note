@@ -1,15 +1,15 @@
-# Tech Meeting Agenda 31 Mar 2024
+# Technology Overview
 
 > ## On Goings
 
-- Operation Sheet
+- Operation Sheet [Branch Operation Sheet Requirement](https://docs.google.com/document/d/1lSovFspmEAce3sJZb8Hy_a_efFmiLYOCWUaFuq9giRs/edit)
 - Financial Report Sheet for Operation
 - Demand Monitoring System ( for Operator )
 - Tech Infrastructure Proposal
 
 > ## Waiting
 
-- Operation Sheet Requirement
+- Operation Sheet Requirement ( Branch Manager, Area Manager, COO Sheet)
 - Operation Dashboard Requirement
 - Evaluation Process
 - New Evaluation Criteria for Tech Department ( and others!? )
