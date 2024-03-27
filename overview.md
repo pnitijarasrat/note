@@ -10,7 +10,7 @@
 
 > ## Waiting
 
-- Operation Sheet Requirement ( Branch Manager, Area Manager, COO Sheet)
+- Operation Sheet Requirement ( Branch Manager, Area Manager, COO Sheet )
 - Operation Dashboard Requirement
 - Evaluation Process
 - New Evaluation Criteria for Tech Department ( and others!? )
@@ -19,7 +19,7 @@
 
 - Make report for Marketing
 - Storing data in DB from Operation ( all cost related ) for Finance and Marketing or whatever
-- Make a report from the DB
+- Make a report from the DB ( need data scientist ? )
 
 > ## Current Questions
 
