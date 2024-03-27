@@ -13,6 +13,7 @@
 - Operation Sheet Requirement ( Branch Manager, Area Manager, COO Sheet )
 - Operation Dashboard Requirement
 - Evaluation Process
+- Evaluation Feature Requirement
 - New Evaluation Criteria for Tech Department ( and others!? )
 
 > ## Going to Happen for sure
@@ -42,3 +43,7 @@
 > ## Concern
 
 - Current Score
+
+> ## Website
+
+- Project Max score
