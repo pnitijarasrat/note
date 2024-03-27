@@ -6,6 +6,7 @@
 - Financial Report Sheet for Operation
 - Demand Monitoring System ( for Operator )
 - Tech Infrastructure Proposal
+- API from Advisory Board works, UI will be made shortly
 
 > ## Waiting
 
