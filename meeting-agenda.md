@@ -27,3 +27,9 @@
 - What thing is going to happen after Q2 run? Quarter by quarter ?
 - Supplier Factor ( late, defect ) pretty not sure about this for this moment
 - Daily run process chart
+- Date Format ( I assume that it's up to Tech Department )
+
+> ## Need to Figure out
+
+- How to put all transaction from operator to DB?
+- How will other departments input their investment or cost related topics?
