@@ -34,3 +34,11 @@
 
 - How to put all transaction from operator to DB?
 - How will other departments input their investment or cost related topics?
+
+> ## Nono's Update
+
+- Branch operator -> Branch Manager -> Area Manager -> Coo
+
+> ## Concern
+
+- Current Score
