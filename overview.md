@@ -23,27 +23,39 @@
   ( all cost related ) for Finance and Marketing or whatever
 - Make a report from the DB ( need data scientist ? )
 
+## Information
+
+### Board
+
+- Technology needs to implement **_every_** tech related possible. Ex. If Marketing deploys Royalty Program, Tech needs to build system for that.
+- Demand from board will be by **_transaction_**
+- Late, Defect, Missing items rate will be sent with Demand
+
+### Marketing
+
+### Finance
+
+### Operation
+
+### Executive
+
 ## Current Questions
 
 - When will marketing need to use the data? after Q2 ?
 - Finance too ?
 - What thing is going to happen after Q2 run? Quarter by quarter ?
 - Supplier Factor ( late, defect ) pretty not sure about this for this moment
-- Daily run process chart
 - Date Format ( I assume that it's up to Tech Department )
+- Operating Process ( all stakeholder, from operator to C level )
 
 ## Need to Figure out
 
 - How to put all transaction from operator to DB?
 - How will other departments input their investment or cost related topics?
 
-## Nono's Update
-
-- Branch operator -> Branch Manager -> Area Manager -> Coo
-
 ## Concern
 
-- Current Score -- They say it will be 35 for all of Technology Project
+- Current Score -- They say it will be 35 for all of Technology Project -- talked with Tawan, she confirmed 35 for every Tech project.
 
 ## Website
 
@@ -55,8 +67,3 @@
 > ### Employee
 
 - [ ] Branch Number 24
-
-## With Owner 28 Mar 2024
-
-- Meeting doc should be submitted 1 day before meeting
--
