@@ -46,4 +46,7 @@
 
 > ## Website
 
-- Project Max score
+_Recruit_
+
+- [x] Project Max Score Display
+- [ ] Project Max Score Input
