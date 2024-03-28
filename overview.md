@@ -19,7 +19,8 @@
 > ## Going to Happen for sure
 
 - Make report for Marketing
-- Storing data in DB from Operation ( all cost related ) for Finance and Marketing or whatever
+- Storing data in DB from Operation
+  ( all cost related ) for Finance and Marketing or whatever
 - Make a report from the DB ( need data scientist ? )
 
 > ## Current Questions
@@ -46,11 +47,11 @@
 
 > ## Website
 
-**Recruit**
+### Recruit
 
 - [x] Project Max Score Display
 - [x] Project Max Score Input
 
-**Employee**
+### Employee
 
 - [ ] Branch Number 24
