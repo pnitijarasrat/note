@@ -1,6 +1,6 @@
 # Technology Overview
 
-> ## On Goings
+## On Goings
 
 - Operation Sheet [Branch Operation Sheet Requirement](https://docs.google.com/document/d/1lSovFspmEAce3sJZb8Hy_a_efFmiLYOCWUaFuq9giRs/edit)
 - Financial Report Sheet for Operation
@@ -8,7 +8,7 @@
 - Tech Infrastructure Proposal
 - API from Advisory Board works, UI will be made shortly
 
-> ## Waiting
+## Waiting
 
 - Operation Sheet Requirement ( Branch Manager, Area Manager, COO Sheet ) ( Only have branch operator for now )
 - Operation Dashboard Requirement
@@ -16,14 +16,14 @@
 - Evaluation Feature Requirement
 - New Evaluation Criteria for Tech Department ( and others!? )
 
-> ## Going to Happen for sure
+## Going to Happen for sure
 
 - Make report for Marketing
 - Storing data in DB from Operation
   ( all cost related ) for Finance and Marketing or whatever
 - Make a report from the DB ( need data scientist ? )
 
-> ## Current Questions
+## Current Questions
 
 - When will marketing need to use the data? after Q2 ?
 - Finance too ?
@@ -32,26 +32,31 @@
 - Daily run process chart
 - Date Format ( I assume that it's up to Tech Department )
 
-> ## Need to Figure out
+## Need to Figure out
 
 - How to put all transaction from operator to DB?
 - How will other departments input their investment or cost related topics?
 
-> ## Nono's Update
+## Nono's Update
 
 - Branch operator -> Branch Manager -> Area Manager -> Coo
 
-> ## Concern
+## Concern
 
 - Current Score -- They say it will be 35 for all of Technology Project
 
-> ## Website
+## Website
 
-### Recruit
+> ### Recruit
 
 - [x] Project Max Score Display
 - [x] Project Max Score Input
 
-### Employee
+> ### Employee
 
 - [ ] Branch Number 24
+
+## With Owner 28 Mar 2024
+
+- Meeting doc should be submitted 1 day before meeting
+-
