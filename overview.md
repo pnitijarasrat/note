@@ -49,4 +49,4 @@
 _Recruit_
 
 - [x] Project Max Score Display
-- [ ] Project Max Score Input
+- [x] Project Max Score Input
