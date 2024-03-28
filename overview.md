@@ -46,7 +46,11 @@
 
 > ## Website
 
-_Recruit_
+**Recruit**
 
 - [x] Project Max Score Display
 - [x] Project Max Score Input
+
+**Employee**
+
+- [ ] Branch Number 24
