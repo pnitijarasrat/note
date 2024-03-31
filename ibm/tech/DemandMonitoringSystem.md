@@ -31,5 +31,10 @@ Data Structure
 ## To Do
 
 - [ ] Add increase and decrease button
-- [ ] Handle insert data to database
-- [ ] Data Export Page
+- [x] Data Export Page
+- [ ] Backend Handle storing data
+- [ ] Handle Promotion
+
+## To Revise
+
+- Connect with API both request and storing and downloading data
