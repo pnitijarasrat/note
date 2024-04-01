@@ -50,3 +50,4 @@ Done
 ## To Revise
 
 - Connect with API both request and storing and downloading data
+- CORS Policy from backend
