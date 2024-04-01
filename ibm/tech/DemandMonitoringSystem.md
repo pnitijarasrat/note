@@ -39,13 +39,14 @@ Not Done
 
 - [ ] Backend Handle storing data
 - [ ] Handle Promotion
-- [ ] Handle Sync Function
 
 Done
 
+- [x] Handle Sync Function
 - [x] Add Sync Demand Button
 - [x] Add increase and decrease button
 - [x] Data Export Page
+- [x] Cache Demand
 
 ## To Revise
 
