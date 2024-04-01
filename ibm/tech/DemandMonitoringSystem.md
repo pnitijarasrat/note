@@ -34,6 +34,7 @@ Data Structure
 - [x] Data Export Page
 - [ ] Backend Handle storing data
 - [ ] Handle Promotion
+- [ ] Add Sync Demand Button
 
 ## To Revise
 
