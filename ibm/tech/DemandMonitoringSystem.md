@@ -23,6 +23,11 @@ Data Structure
 
 - {"day" , "A", "B", "C", "D", etc}
 
+## Hierarchy
+
+- Get demand every day ( in ibm ) and cache it every get call
+- Pass all demand via props ( to monitor and data pages )
+
 ## Page
 
 - Monitor Page ( show demand of each branch )
