@@ -7,7 +7,7 @@
 
 ## To Do
 
-- [ ] handle void
+- [x] handle void
 - [ ] handle discount selection
-- [ ] handle pay slip
-- [ ] handle adding customer tel
+- [x] handle pay slip
+- [x] handle adding customer tel
