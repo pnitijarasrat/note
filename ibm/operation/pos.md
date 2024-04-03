@@ -12,5 +12,7 @@
 - [x] handle pay slip
 - [x] handle adding customer tel
 - [ ] storing data (mock)
-- [ ] fix price
+- [x] fix price
+- [x] fix promotion
 - [ ] add location
+- [ ] add promotion type on slip
