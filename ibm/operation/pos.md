@@ -12,3 +12,5 @@
 - [x] handle pay slip
 - [x] handle adding customer tel
 - [ ] storing data (mock)
+- [ ] fix price
+- [ ] add location
