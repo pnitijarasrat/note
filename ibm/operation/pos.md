@@ -8,6 +8,7 @@
 ## To Do
 
 - [x] handle void
-- [ ] handle discount selection
+- [x] handle discount selection
 - [x] handle pay slip
 - [x] handle adding customer tel
+- [ ] storing data (mock)
