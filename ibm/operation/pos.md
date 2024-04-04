@@ -14,9 +14,8 @@
 - [ ] storing data (mock)
 - [x] fix price
 - [x] fix promotion
-- [ ] add location
-- [ ] add promotion type on slip
-- [ ] add gender and age range
-- [ ] fix calculation
-- [ ] add branch to local storage
-- [ ] allow initial cash
+- [x] add promotion type on slip
+- [x] add gender and age range
+- [x] fix calculation
+- [x] add branch to local storage
+- [x] allow initial cash
