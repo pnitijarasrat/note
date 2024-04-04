@@ -16,3 +16,5 @@
 - [x] fix promotion
 - [ ] add location
 - [ ] add promotion type on slip
+- [ ] add gender and age range
+- [ ] fix calculation
