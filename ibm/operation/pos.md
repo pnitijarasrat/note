@@ -18,3 +18,5 @@
 - [ ] add promotion type on slip
 - [ ] add gender and age range
 - [ ] fix calculation
+- [ ] add branch to local storage
+- [ ] allow initial cash
