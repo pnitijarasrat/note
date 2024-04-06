@@ -11,8 +11,12 @@
 - Show current shelf
 - Activity Console will be on Top
 
+### Overall To Do
+
+- [ ] add current state ex. inventory, on shelf
+
 ### Show Current Inventory To Do
 
-- [ ] handle input lot
+- [x] handle input lot
 - [ ] handle existed lot
-- [ ] current table
+- [x] current table
