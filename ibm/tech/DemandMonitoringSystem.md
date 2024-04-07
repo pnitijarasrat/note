@@ -37,8 +37,8 @@ Data Structure
 
 Not Done
 
-- [ ] Backend Handle storing data
-- [ ] Handle Promotion
+- [x] Can use parameter 'date'
+- [ ] Cache all data, now only cache the current date
 
 Done
 
