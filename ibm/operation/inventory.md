@@ -13,10 +13,15 @@
 
 ### Overall To Do
 
-- [ ] add current state ex. inventory, on shelf
+- [x] add current state ex. inventory, on shelf
 
 ### Show Current Inventory To Do
 
 - [x] handle input lot
-- [ ] handle existed lot
+- [x] handle existed lot
 - [x] current table
+
+### Show Current On Shelf To Do
+
+- [ ] handle sales calculation
+- [ ] handle at the end of day shelf count
