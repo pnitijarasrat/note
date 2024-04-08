@@ -23,7 +23,8 @@
 
 - [ ] Update Export Data Feature
 - [ ] Check Calculation with Google Sheet
-- [ ] Make Dashboard
+- [ ] Check sum data on Dashboard
+- [x] Make Dashboard
 - [x] Handle Sync Function
 - [x] Add Sync Demand Button
 - [x] Add increase and decrease button
