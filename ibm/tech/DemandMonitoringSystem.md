@@ -13,42 +13,21 @@
 - Backend: Node [don't need anymore]
 - Database: Google Firestore
 
-## Components
-
-API
-
-- [GET](https://ibmapi.onrender.com/Demand/) / How to [cache](https://www.robinwieruch.de/local-storage-react/#local-storage-in-react) data
-
-Data Structure
-
-- {"day" , "A", "B", "C", "D", etc}
-
-## Hierarchy
-
-- Get demand every day ( in ibm ) and cache it every get call
-- Pass all demand via props ( to monitor and data pages )
-
 ## Page
 
 - Monitor Page ( show demand of each branch )
 - Data page ( for other department who want to use data )
+- Dashboard shows sales overall, by product
 
 ## To Do
 
-Not Done
-
-- [x] Can use parameter 'date'
-- [ ] Cache all data, now only cache the current date
-
-Done
-
+- [ ] Update Export Data Feature
+- [ ] Check Calculation with Google Sheet
+- [ ] Make Dashboard
 - [x] Handle Sync Function
 - [x] Add Sync Demand Button
 - [x] Add increase and decrease button
 - [x] Data Export Page
+- [x] Can use parameter 'date'
+- [x] Cache all data, now only cache the current date
 - [x] Cache Demand
-
-## To Revise
-
-- Connect with API both request and storing and downloading data
-- CORS Policy from backend
