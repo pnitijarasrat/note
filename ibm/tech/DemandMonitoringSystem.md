@@ -21,6 +21,12 @@
 
 ## To Do
 
+### Urgent
+
+- [ ] Handle cache
+- [ ] Handle Loading to ensure that user don't spam view
+- [ ] Show all downloaded data at table don't filter
+
 - [ ] Update Export Data Feature
 - [ ] Check Calculation with Google Sheet
 - [ ] Check sum data on Dashboard
