@@ -21,15 +21,12 @@
 
 ## To Do
 
+- [ ] handle detect change in database
+- [ ] make it auto send the data to the sheet ( just connect the function )
+
 ### Urgent
 
-- [ ] Handle cache
-- [ ] Handle Loading to ensure that user don't spam view
-- [ ] Show all downloaded data at table don't filter
-
 - [ ] Update Export Data Feature
-- [ ] Check Calculation with Google Sheet
-- [ ] Check sum data on Dashboard
 - [x] Make Dashboard
 - [x] Handle Sync Function
 - [x] Add Sync Demand Button
