@@ -64,3 +64,48 @@ Process used to verify the ownership of the Token value
 - Not energy efficient vs Energy efficient
 - Secure with expensive equipment vs Secure by Community
 - Block reward vs Transaction fee reward
+
+## Process of Proof of Stake
+
+1. Staking - Lock their token for security deposit and their commitment to maintain the network and receive staking reward, transaction fee, Governance Participation (Previllege)
+2. Validator Selection - depend of Size of the stake
+3. Block Proposal
+4. Validation - other validator verify the proposed block
+5. Finalization - the block is added to the blockchain
+
+## Distribution Plan
+
+1. Total Token Supply = Estimated Users x Transaction/User/Year
+
+Example
+
+- Estimated Users = 500,000
+- Transaction/User/Year = 1000 Token annually
+- Total Token Supple = 500,000,000 Token
+- Longevity and Growth: if the project would last long may be double from the calculation
+
+2. Distribution Plan
+
+- ICO - big enough to attract investment (~20-30%)
+- Team and Advisors - (~10%) for motivation. apply vesting schedules ( 1 year - no token, 2-4 years - 1000 tokens, etc)
+- Community Incentives - (~30-40%) for community should be large
+- Reserve - for unforseen expense (~20%)
+- Partnerships and Development - (~10-20%)
+
+3. Pricing
+
+- Fixed
+- Dutch Auction -> decrease overtime === fair market price
+- Dynamic \* -> demand and supply
+
+4. Vesting Schedules
+
+## Token Rate
+
+1. Block Creation Rate - faster = less secure, faster transaction comfirmation
+2. Optimal Staking Reward
+
+- ROR
+- Calculate Inflation - 5% created 1% burn = 4% inflation
+- Regular Creation Rate ~ 4-5% of Total Supply
+- Regular Burn Rate ~ 0.5-2% of Total Supply
