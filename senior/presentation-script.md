@@ -38,3 +38,25 @@
 - [ ] การที่ระบบยอมให้ user กรอกข้อมูลไม่ครบแปลว่าระบบยังไม่มี Error Prevention
 - [ ] และการที่ User เกินครึ่งมองข้าม Drop down list แปลว่าปัจจุบัน Interface ของระบบยังมีความไม่ชัดเจนมากพอ
 - [ ] และสุดท้ายการที่ user เจอ error และทำให้เขาหลง แปลว่า error message ยังมีความไม่ชัดเจนเช่นกันครับ
+
+## Objective and Scope
+
+- [ ] จึงเป็นที่มาของการศึกษาในครั้งนี้ที่จะมุ่งปรับปรุง usability ของ payroll service
+- [ ] โดยมี scope คือการแก้ไข 3 ปัญหาที่เกิดขึ้น บนเวอร์ชั่น desktop และผู้ทดสอบเป็นคนไทย
+
+## Iterative Design Approach
+
+- [ ] ในส่วนของขั้นตอนการทำงาน เราใช้วิธี Iterative Design โดยเริ่มจากการปรับปรุง Workflow ของการทำงานเพื่อเพิ่มประสิทธิภาพของการระบบ
+- [ ] จากนั้นจึงทำการ Design Interface เพื่อปรับปรุง Interaction Cost ระหว่าง User กับ ระบบ
+
+## System Implementation
+
+- [ ] ในการพัฒนาระบบ เราใช้ React และ Antd libray ในการพัฒนา frontend และใช้ Nodejs สำหรับ backend โดยใช้ database ของ mongodb
+- [ ] จากนั้นนำไป deploy บนเว็ปไซต์ชื่อ render
+- [ ] เพื่อให้ user สามารถเข้ามาใช้งานจากที่ไหนก็ได้
+
+## System Validation
+
+- [ ] ในส่วนของการทดสอบระบบ เราเลือกผู้ใช้งานที่มีอายุ 20-40 ปี ที่มีประสบการณ์ในการทำ Payroll แต่ว่าไม่เคยใช้ service ของบริษัทกรณีศึกษามาก่อน
+- [ ] โดยให้ผู้เข้าร่วมทำ 4 task คือ register employee, update attendance , Confirm salary และ create document
+- [ ] และวัด 3 metric คือ time on task, success rate และ lostness
