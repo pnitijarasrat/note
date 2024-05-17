@@ -60,3 +60,27 @@
 - [ ] ในส่วนของการทดสอบระบบ เราเลือกผู้ใช้งานที่มีอายุ 20-40 ปี ที่มีประสบการณ์ในการทำ Payroll แต่ว่าไม่เคยใช้ service ของบริษัทกรณีศึกษามาก่อน
 - [ ] โดยให้ผู้เข้าร่วมทำ 4 task คือ register employee, update attendance , Confirm salary และ create document
 - [ ] และวัด 3 metric คือ time on task, success rate และ lostness
+
+## Usability Testing Result Register Employee
+
+- [ ] จากผลการทดสอบพบว่า register employee มี average time on task ลดลงเหลือเพียง 184 วินาที
+- [ ] มี success rate สูงขึ้นจน 100% และไม่มีการกรอกข้อมูลไม่ครบอีก
+- [ ] และมี lostness เพียง 0.07
+
+## Usability Testing Result Update Attendance
+
+- [ ] update attendance มี average time on task เหลือ 98 วินาที
+- [ ] มี success rate สูงขึ้นจน 100% เช่นกัน และไม่มีการแก้ไขข้อมูลผิดเดือน
+- [ ] แต่ design ใหม่มี lostness สูงขึ้นเล็กน้อย
+
+## Usability Testing Result Confirm Salary
+
+- [ ] จาก design ใหม่ ประกอบกับการทำให้มั่นใจว่าข้อมูลต่าง ๆ นั้นครบถ้วนตั้งแต่ขั้นตอน register นั้นทำให้ user ไม่พบเจอ error เลย จนทำให้ lostness เหลือเพียง 0.1 -
+- [ ] เป็นผลให้ average time on task ลดลงเหลือเพียง 39 วินาที
+- [ ] และมี success rate ที่ 100%
+
+## Usability Testing Result Confirm Salary
+
+- [ ] create document มี average time on task เหลือเพียง 42 วินาที
+- [ ] ในส่วนของ success rate ยังคงเดิมที่ 100%
+- [ ] และ lostness ลดลงเล็กน้อย
