@@ -6,32 +6,32 @@
 
 ## Intro 2
 
-- [ ] ในยุคปัจจุบันที่เป็นยุค Digital แอพต่าง ๆ ถูกสร้างขึ้นมามากมาย จนบางครั้งผู้ใช้เองก็เลือกไม่ถูกว่าจะใช้อะไรดี
+- [ ] ในยุคปัจจุบันที่เป็นยุค Digital แอพต่าง ๆ ถูกสร้างขึ้นมามากมาย จนบางครั้งก็เป็นเรื่องยากสำหรับผู้ใช้งานในการตัดสินใจเลือกใช้เทคโนโลยี
 - [ ] หรือในบริบทของบริษัทที่มี Product เป็น Software
-- [ ] การซื้อขายจะเกิดขึ้นเมื่อผู้ใช้เกิดการยอมรับในเทคโนโลยรเหล่านั้นเท่านั้น
-- [ ] ซึ่งจะเกิดขึ้นเมื่อผู้ใช้เห็นว่าเทคโนโลยีนั้นมีประโยชน์ และใช้งานง่าย
+- [ ] การซื้อขายจะเกิดขึ้นเมื่อผู้ใช้เกิดการยอมรับในเทคโนโลยีเหล่านั้นเท่านั้น
+- [ ] ซึ่งการยอมรับนั้นจะเกิดขึ้นได้ก็ต่อเมื่อ ผู้ใช้งานพบว่าเทคโนโลยีนั้นมีประโยชน์และใช้งานง่าย
 
 ## Case Study Company
 
 - [ ] และบริษัทกรณีศึกษาของเรา มี Service 3 ตัว คือ Payroll Attendance และ Workflow
-- [ ] ในขณะที่ผู้ใช้ของ Attendnace และ Workflow เพิ่มขึ้นอย่างต่อเนื่อง ผู้ใช้ Payroll กลับเพิ่มขึ้นไม่เยอะ เราเลยสนใจ Service Payroll ครับ
+- [ ] ในขณะที่ผู้ใช้ของ Attendnace และ Workflow เพิ่มขึ้นอย่างต่อเนื่อง ผู้ใช้ Payroll กลับเพิ่มขึ้นไม่เยอะ เราเลยเลือกสนใจ Service Payroll ครับ
 - [ ] โดยคุณปีเตอร์ HR อายุ 29 ปี ซึ่งเป็นตัวแทนของผู้ใช้ Payroll กล่าวว่า เขามี 4 task ที่ต้องทำเป็นประจำทุกเดือน
 - [ ] คือ Register Employee, Update Attendance, Confirm Salary และ Create Document
-- [ ] และจากการสัมภาษณ์ผู้ใช้งานจำนวน 20 คน เราพบว่า User Emotion มีค่าลดลงในช่วง Confirm Salary
+- [ ] และจากการสัมภาษณ์ผู้ใช้งานจริงจำนวน 20 คน เราพบว่า User Emotion มีค่าลดลงในช่วงของการ Confirm Salary
 
 ## Usability Testing Scene
 
-- [ ] เพื่อวิเคราะห์หาสาเหตุ เราเลยทำ Usability Testing กับตัว Payroll service ซึ่งมี 4 task คือ Register employee, Update attendance, comfirm salary และ create document
-- [ ] โดย metric ที่ใช้วัดประกอบด้วย time on task, success rate , lostness
-- [ ] โดยได้ผลลัพธ์ที่สำคัญดังนี้
+- [ ] เพื่อวิเคราะห์หาสาเหตุ เราเลยทำ Usability Testing กับ Payroll service ซึ่งประกอบไปด้วย 4 task คือ Register employee, Update attendance, comfirm salary และ create document
+- [ ] โดย metric ที่ใช้วัดประกอบด้วย time on task, success rate และ, lostness
 
 ## Usability Testing Result
 
+- [ ] โดยได้ผลลัพธ์ที่สำคัญดังนี้
 - [ ] Register Employee มี success rate แค่ 55% ส่วนที่ไม่สำเร็จเกิดจาก User กรอกข้อมูลตอนสมัครไม่ครบ
 - [ ] Update Attendance มี success rate แค่ 45% ส่วนที่ไม่สำเร็จเกิดจาก User แก้ไขข้อมูลผิดเดือน
-- [ ] Confirm Salary มี lostness สูงถึง 0.71 พบว่าเกิดจากการที่ user พบ error
+- [ ] Confirm Salary มี lostness สูงถึง 0.71 พบว่าเกิดจากการที่ user พบ error แล้วไม่สามารถแก้ไขได้
 - [ ] Create Document มี success rate ที่ 100% ครับ
-- [ ] ซึ่งผลลัพธ์ดังกล่าว สามารถนำมาสรุปเป็น Painpoint ได้ดังนี้ครับ
+- [ ] ซึ่งผลลัพธ์ดังกล่าว สามารถนำมาสรุปเป็น Painpoint ของระบบได้ดังนี้ครับ
 
 ## System Painpoint
 
