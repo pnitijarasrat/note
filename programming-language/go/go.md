@@ -5,6 +5,9 @@
 - [ ] learn more about map
 - [ ] learn more about %v %q
 - [ ] find something similar to _while_
+- [ ] learn more about type
+- [ ] Effective GO Topic
+- [ ] How to write GO Code Topic
 
 ## Declaring Variable
 
