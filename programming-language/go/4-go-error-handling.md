@@ -94,3 +94,4 @@ func b() {
 - built in function that regains control of a panicking goroutine
 - only useful inside deferred functions
 - during normal execution, recover returns nil
+- recover capture value given to panic and resume normal execution
