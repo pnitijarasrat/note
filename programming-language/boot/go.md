@@ -294,3 +294,151 @@ type firetruck interface {
 - Interfaces don’t have constructors or deconstructors that require that data is created or destroyed.
 - Interfaces aren’t hierarchical by nature, though there is syntactic sugar to create interfaces that happen to be supersets of other interfaces.
 - Interfaces define function signatures, but not underlying behavior. Making an interface often won’t DRY up your code in regards to struct methods. For example, if five types satisfy the fmt.Stringer interface, they all need their own version of the String() function.
+
+## GO For Loop
+
+### Infinite Loop
+
+```go
+for INITIAL; ; AFTER {
+  // do something forever
+}
+```
+
+### There is no while loop in Go
+
+Most programming languages have a concept of a while loop. Because Go allows for the omission of sections of a for loop, a while loop is just a for loop that only has a CONDITION.
+
+```go
+plantHeight := 1
+for plantHeight < 5 {
+  fmt.Println("still growing! current height:", plantHeight)
+  plantHeight++
+}
+fmt.Println("plant has grown to ", plantHeight, "inches")
+```
+
+### Continue Keyword
+
+The continue keyword stops the current iteration of a loop and continues to the next iteration. continue is a powerful way to use the guard clause pattern within loops.
+
+```go
+for i := 0; i < 10; i++ {
+  if i % 2 == 0 {
+    continue
+  }
+  fmt.Println(i)
+}
+// 1
+// 3
+// 5
+// 7
+// 9
+```
+
+### Break Keyword
+
+The break keyword stops the current iteration of a loop and exits the loop.
+
+```go
+for i := 0; i < 10; i++ {
+  if i == 5 {
+    break
+  }
+  fmt.Println(i)
+}
+// 0
+// 1
+// 2
+// 3
+// 4
+```
+
+## GO Array Slice
+
+### Array
+
+- Arrays are fixed-size groups of variables of the same type.
+- The type [n]T is an array of n values of type T
+- To declare an array of 10 integers:
+
+```go
+var myInts [10]int
+primes := [6]int{2, 3, 5, 7, 11, 13}
+```
+
+### Slice
+
+- 99 times out of 100 you will use a slice instead of an array when working with ordered lists.
+- Arrays are fixed in size. Once you make an array like [10]int you can't add an 11th element.
+- A slice is a dynamically-sized, flexible view of the elements of an array.
+
+```go
+primes := [6]int{2, 3, 5, 7, 11, 13}
+mySlice := primes[1:4]
+// mySlice = {3, 5, 7}
+```
+
+### Make
+
+Most of the time we don't need to think about the underlying array of a slice. We can create a new slice using the make function:
+
+- Slices created with make will be filled with the zero value of the type.
+
+```go
+// func make([]T, len, cap) []T
+mySlice := make([]int, 5, 10)
+
+// the capacity argument is usually omitted and defaults to the length
+mySlice := make([]int, 5)
+```
+
+### Variadic
+
+- Many functions, especially those in the standard library, can take an arbitrary number of final arguments. This is accomplished by using the "..." syntax in the function signature.
+- A variadic function receives the variadic arguments as a slice.
+
+```go
+func concat(strs ...string) string {
+    final := ""
+    // strs is just a slice of strings
+    for i := 0; i < len(strs); i++ {
+        final += strs[i]
+    }
+    return final
+}
+
+func main() {
+    final := concat("Hello ", "there ", "friend!")
+    fmt.Println(final)
+    // Output: Hello there friend!
+}
+```
+
+### Spread Operator
+
+- The spread operator allows us to pass a slice into a variadic function. The spread operator consists of three dots following the slice in the function call.
+
+```go
+// strings is []string
+func printStrings(strings ...string) {
+  for i := 0; i < len(strings); i++ {
+    fmt.Println(strings[i])
+  }
+}
+
+func main() {
+  names := []string{"bob", "sue", "alice"}
+  printStrings(names...)
+}
+```
+
+### Append
+
+- The built-in append function is used to dynamically add elements to a slice:
+
+```go
+slice = append(slice, oneThing)
+slice = append(slice, firstThing, secondThing)
+slice = append(slice, anotherSlice...)
+```
