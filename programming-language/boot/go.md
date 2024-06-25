@@ -441,4 +441,321 @@ func main() {
 slice = append(slice, oneThing)
 slice = append(slice, firstThing, secondThing)
 slice = append(slice, anotherSlice...)
+
+// dont do this!
+someSlice = append(otherSlice, element)
+
+// to avoid bugs like this, you should always use the append function
+// on the same slice the result is assigned to
+
+// do this instead
+mySlice := []int{1, 2, 3}
+mySlice = append(mySlice, 4)
+```
+
+### Range
+
+```go
+fruits := []string{"apple", "banana", "grape"}
+for i, fruit := range fruits {
+    fmt.Println(i, fruit)
+}
+// 0 apple
+// 1 banana
+// 2 grape
+```
+
+## GO Map
+
+- Maps are similar to JavaScript objects, Python dictionaries, and Ruby hashes. Maps are a data structure that provides key->value mapping.
+- The zero value of a map is nil.
+- We can create a map by using a literal or by using the make() function:
+
+```go
+ages := make(map[string]int)
+ages["John"] = 37
+ages["Mary"] = 24
+ages["Mary"] = 21 // overwrites 24
+
+ages = map[string]int{
+  "John": 37,
+  "Mary": 21,
+}
+```
+
+We can speed up our contact-info lookups by using a map!
+
+- Key-based map lookup: O(1)
+- Slice brute-force search: O(n)
+
+### GO Mutation
+
+```go
+\\ insert
+\\ if not exist, get zero value type
+m[key] = elem
+
+\\ get element
+elem = m[key]
+
+\\ delete
+delete(m, elem)
+
+\\ check if exist
+\\ ok is true if existed, otherwise
+elem, ok := m[key]
+```
+
+## High Order Function
+
+- A function that returns a function or accepts a function as input is called a Higher-Order Function.
+- Go supports first-class and higher-order functions. Another way to think of this is that a function is just another type -- just like ints and strings and bools.
+
+```go
+func add(x, y int) int {
+  return x + y
+}
+
+func mul(x, y int) int {
+  return x * y
+}
+
+// aggregate applies the given math function to the first 3 inputs
+func aggregate(a, b, c int, arithmetic func(int, int) int) int {
+  return arithmetic(arithmetic(a, b), c)
+}
+
+func main() {
+  fmt.Println(aggregate(2,3,4, add))
+  // prints 9
+  fmt.Println(aggregate(2,3,4, mul))
+  // prints 24
+}
+```
+
+## Currying
+
+- Function currying is a concept from functional programming and involves partial application of functions. It allows a function with multiple arguments to be transformed into a sequence of functions, each taking a single argument.
+
+- Although Go does not support full currying, it is possible to simulate this behavior. By designing functions that take other functions as inputs and return new functions, we can achieve a similar effect.
+
+For example:
+
+```go
+func main() {
+  squareFunc := selfMath(multiply)
+  doubleFunc := selfMath(add)
+
+  fmt.Println(squareFunc(5))
+  // prints 25
+
+  fmt.Println(doubleFunc(5))
+  // prints 10
+}
+
+func multiply(x, y int) int {
+  return x * y
+}
+
+func add(x, y int) int {
+  return x + y
+}
+
+func selfMath(mathFunc func(int, int) int) func (int) int {
+  return func(x int) int {
+    return mathFunc(x, x)
+  }
+}
+
+```
+
+## Defer
+
+- The defer keyword is a fairly unique feature of Go. It allows a function to be executed automatically just before its enclosing function returns.
+- The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding function returns.
+- Deferred functions are typically used to close database connections, file handlers and the like.
+
+For example:
+
+```go
+// CopyFile copies a file from srcName to dstName on the local filesystem.
+func CopyFile(dstName, srcName string) (written int64, err error) {
+
+  // Open the source file
+  src, err := os.Open(srcName)
+  if err != nil {
+    return
+  }
+  // Close the source file when the CopyFile function returns
+  defer src.Close()
+
+  // Create the destination file
+  dst, err := os.Create(dstName)
+  if err != nil {
+    return
+  }
+  // Close the destination file when the CopyFile function returns
+  defer dst.Close()
+
+  return io.Copy(dst, src)
+}
+```
+
+- In the above example, the src.Close() function is not called until after the CopyFile function was called but immediately before the CopyFile function returns.
+- Defer is a great way to make sure that something happens at the end of a function, even if there are multiple return statements.
+
+## Closures
+
+- A closure is a function that references variables from outside its own function body. The function may access and assign to the referenced variables.
+- In this example, the concatter() function returns a function that has reference to an enclosed doc value. Each successive call to harryPotterAggregator mutates that same doc variable.
+
+```go
+func concatter() func(string) string {
+	doc := ""
+	return func(word string) string {
+		doc += word + " "
+		return doc
+	}
+}
+
+func main() {
+	harryPotterAggregator := concatter()
+	harryPotterAggregator("Mr.")
+	harryPotterAggregator("and")
+	harryPotterAggregator("Mrs.")
+	harryPotterAggregator("Dursley")
+	harryPotterAggregator("of")
+	harryPotterAggregator("number")
+	harryPotterAggregator("four,")
+	harryPotterAggregator("Privet")
+
+	fmt.Println(harryPotterAggregator("Drive"))
+	// Mr. and Mrs. Dursley of number four, Privet Drive
+}
+```
+
+## Anonymous Function
+
+- Anonymous functions are true to form in that they have no name. We've been using them throughout this chapter, but we haven't really talked about them yet.
+- Anonymous functions are useful when defining a function that will only be used once or to create a quick closure.
+
+```go
+// doMath accepts a function that converts one int into another
+// and a slice of ints. It returns a slice of ints that have been
+// converted by the passed in function.
+func doMath(f func(int) int, nums []int) []int {
+	var results []int
+	for _, n := range nums {
+		results = append(results, f(n))
+	}
+	return results
+}
+
+func main() {
+	nums := []int{1, 2, 3, 4, 5}
+
+    // Here we define an anonymous function that doubles an int
+    // and pass it to doMath
+	allNumsDoubled := doMath(func(x int) int {
+	    return x + x
+	}, nums)
+
+	fmt.Println(allNumsDoubled)
+    // prints:
+    // [2 4 6 8 10]
+}
+```
+
+## Pointer
+
+- A pointer is a variable that stores the memory address of another variable. This means that a pointer "points to" the location of where the data is stored NOT the actual data itself.
+- If a pointer points to nothing (the zero value of the pointer type) then dereferencing it will cause a runtime error (a panic) that crashes the program. Generally speaking, whenever you're dealing with pointers you should check if it's nil before trying to dereference it.
+- Pointer receivers are more common than value receivers.
+
+```go
+// The * syntax defines a pointer:
+var p *int
+
+// The & operator generates a pointer to its operand.
+myString := "hello"
+myStringPtr := &myString
+
+// pointer receiver
+type car struct {
+	color string
+}
+
+func (c *car) setColor(color string) {
+	c.color = color
+}
+
+func main() {
+	c := car{
+		color: "white",
+	}
+	c.setColor("blue")
+	fmt.Println(c.color)
+	// prints "blue"
+}
+```
+
+## Channel
+
+- A send to nil channel is blocked forever
+- A receive from nil channel is blocked forever also
+- A send to closed channel panics
+- A receive from closed channel return the zero value immediately
+
+```go
+// create channel
+ch := make(chan int)
+
+// assign value to var from channel
+ch <- 69
+
+// receive data from channel
+v := <-ch
+```
+
+### Closing Channel
+
+Channels can be explicitly closed by a sender:
+
+```go
+ch := make(chan int)
+
+// do some stuff with the channel
+
+close(ch)
+
+// check if channel is closed
+// ok will be false is empty and closed
+v, ok := <-ch
+
+```
+
+### Range Channel
+
+- This example will receive values over the channel (blocking at each iteration if nothing new is there) and will exit only when the channel is closed.
+
+```go
+for item := range ch {
+    // item is the next value received from the channel
+}
+```
+
+### Select Channel
+
+- Sometimes we have a single goroutine listening to multiple channels and want to process data in the order it comes through each channel.
+- A select statement is used to listen to multiple channels at the same time. It is similar to a switch statement but for channels.
+- The first channel with a value ready to be received will fire and its body will execute. If multiple channels are ready at the same time one is chosen randomly. The ok variable in the example above refers to whether or not the channel has been closed by the sender yet.
+- mostly come with infinite loop
+
+```go
+select {
+case i, ok := <- chInts:
+    fmt.Println(i)
+case s, ok := <- chStrings:
+    fmt.Println(s)
+}
 ```
