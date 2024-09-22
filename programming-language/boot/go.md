@@ -94,9 +94,7 @@ if length := getLength(email); length < 1 {
 }
 ```
 
-## GO struct
-
-### When should you use an anonymous struct?
+## Anonymous struct?
 
 In general, prefer named structs. Named structs make it easier to read and understand your code, and they have the nice side-effect of being reusable. I sometimes use anonymous structs when I know I won't ever need to use a struct again. For example, sometimes I'll use one to create the shape of some JSON data in HTTP handlers.
 
@@ -116,7 +114,7 @@ type car struct {
 }
 ```
 
-### Embedded Struct
+## Embedded Struct
 
 ```go
 type car struct {
@@ -133,7 +131,7 @@ type truck struct {
 }
 ```
 
-### Struct Method
+## Struct Method
 
 A receiver is just a special kind of function parameter. Receivers are important because they will, as you'll learn in the exercises to come, allow us to define interfaces that our structs (and other types) can implement.
 
@@ -354,9 +352,7 @@ for i := 0; i < 10; i++ {
 // 4
 ```
 
-## GO Array Slice
-
-### Array
+## Array
 
 - Arrays are fixed-size groups of variables of the same type.
 - The type [n]T is an array of n values of type T
@@ -367,7 +363,7 @@ var myInts [10]int
 primes := [6]int{2, 3, 5, 7, 11, 13}
 ```
 
-### Slice
+## Slice
 
 - 99 times out of 100 you will use a slice instead of an array when working with ordered lists.
 - Arrays are fixed in size. Once you make an array like [10]int you can't add an 11th element.
@@ -757,5 +753,233 @@ case i, ok := <- chInts:
     fmt.Println(i)
 case s, ok := <- chStrings:
     fmt.Println(s)
+}
+```
+
+## GO Mutexes (Mutual Exclution)
+
+- Mutexes allow us to lock access to data. This ensures that we can control which goroutines can access certain data at which time.
+- Go's standard library provides a built-in implementation of a mutex with the sync.Mutex type and its two methods:
+
+  - .Lock*()*
+  - .Unlock()
+
+- We can protect a block of code by surrounding it with a call to Lock and Unlock as shown on the protected() method below.
+- It's good practice to structure the protected code within a function so that defer can be used to ensure that we never forget to unlock the mutex.
+
+```go
+mu := &sync.Mutex{}
+
+func protected(){
+    mu.Lock() // other thread cannot access
+    defer mu.Unlock()
+    // the rest of the function is protected
+    // any other calls to `mu.Lock()` will block
+    // just add mu.Lock() and defer mu.Unlock() then you should be fine.
+}
+```
+
+- Maps are not thread-safe. In GO, it's not safe to write and read map at the same time.
+- Maps are not safe for concurrent use! If you have multiple goroutines accessing the same map, and at least one of them is writing to the map, you must lock your maps with a mutex.
+
+### RW Mutexes (Read and Write)
+
+- Maps are safe for concurrent read access, just not concurrent read/write or write/write access. A read/write mutex allows all the readers to access the map at the same time, but a writer will still lock out all other readers and writers.
+- By using a sync.RWMutex, our program becomes more efficient. We can have as many readLoop() threads as we want, while still ensuring that the writers have exclusive access.
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+func main() {
+	m := map[int]int{}
+
+	mu := &sync.RWMutex{}
+
+	go writeLoop(m, mu)
+	go readLoop(m, mu)
+	go readLoop(m, mu)
+	go readLoop(m, mu)
+	go readLoop(m, mu)
+
+	// stop program from exiting, must be killed
+	block := make(chan struct{})
+	<-block
+}
+
+func writeLoop(m map[int]int, mu *sync.RWMutex) {
+	for {
+		for i := 0; i < 100; i++ {
+			mu.Lock()
+			m[i] = i
+			mu.Unlock()
+		}
+	}
+}
+
+func readLoop(m map[int]int, mu *sync.RWMutex) {
+	for {
+		mu.RLock()
+		for k, v := range m {
+			fmt.Println(k, "-", v)
+		}
+		mu.RUnlock()
+	}
+}
+```
+
+## Go Generic
+
+### Type Parameter
+
+- Put simply, generics allow us to use variables to refer to specific types. This is an amazing feature because it allows us to write abstract functions that drastically reduce code duplication.
+
+```go
+func splitAnySlice[T any](s []T) ([]T, []T) {
+    mid := len(s)/2
+    return s[:mid], s[mid:]
+}
+```
+
+### Generic Type Constraints
+
+```go
+type stringer interface {
+    String() string
+}
+
+func concat[T stringer](vals []T) string {
+    result := ""
+    for _, val := range vals {
+        // this is where the .String() method
+        // is used. That's why we need a more specific
+        // constraint instead of the any constraint
+        result += val.String()
+    }
+    return result
+}
+```
+
+### Type List
+
+```go
+// Ordered is a type constraint that matches any ordered type.
+// An ordered type is one that supports the <, <=, >, and >= operators.
+type Ordered interface {
+    ~int | ~int8 | ~int16 | ~int32 | ~int64 |
+        ~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~uintptr |
+        ~float32 | ~float64 |
+        ~string
+}
+```
+
+### Generic Parameter Constraints
+
+```go
+// The store interface represents a store that sells products.
+// It takes a type parameter P that represents the type of products the store sells.
+type store[P product] interface {
+	Sell(P)
+}
+
+type product interface {
+	Price() float64
+	Name() string
+}
+
+type book struct {
+	title  string
+	author string
+	price  float64
+}
+
+func (b book) Price() float64 {
+	return b.price
+}
+
+func (b book) Name() string {
+	return fmt.Sprintf("%s by %s", b.title, b.author)
+}
+
+type toy struct {
+	name  string
+	price float64
+}
+
+func (t toy) Price() float64 {
+	return t.price
+}
+
+func (t toy) Name() string {
+	return t.name
+}
+
+// The bookStore struct represents a store that sells books.
+type bookStore struct {
+	booksSold []book
+}
+
+// Sell adds a book to the bookStore's inventory.
+func (bs *bookStore) Sell(b book) {
+	bs.booksSold = append(bs.booksSold, b)
+}
+
+// The toyStore struct represents a store that sells toys.
+type toyStore struct {
+	toysSold []toy
+}
+
+// Sell adds a toy to the toyStore's inventory.
+func (ts *toyStore) Sell(t toy) {
+	ts.toysSold = append(ts.toysSold, t)
+}
+
+// sellProducts takes a store and a slice of products and sells
+// each product one by one.
+func sellProducts[P product](s store[P], products []P) {
+	for _, p := range products {
+		s.Sell(p)
+	}
+}
+
+func main() {
+	bs := bookStore{
+		booksSold: []book{},
+	}
+
+    // By passing in "book" as a type parameter, we can use the sellProducts function to sell books in a bookStore
+	sellProducts[book](&bs, []book{
+		{
+			title:  "The Hobbit",
+			author: "J.R.R. Tolkien",
+			price:  10.0,
+		},
+		{
+			title:  "The Lord of the Rings",
+			author: "J.R.R. Tolkien",
+			price:  20.0,
+		},
+	})
+	fmt.Println(bs.booksSold)
+
+    // We can then do the same for toys
+	ts := toyStore{
+		toysSold: []toy{},
+	}
+	sellProducts[toy](&ts, []toy{
+		{
+			name:  "Lego",
+			price: 10.0,
+		},
+		{
+			name:  "Barbie",
+			price: 20.0,
+		},
+	})
+	fmt.Println(ts.toysSold)
 }
 ```
